@@ -6,5 +6,4 @@
 
 ## Homeworks
 
-### 1. Homework #0
-  Installed [Arduino IDE](https://www.arduino.cc/en/software) & created this repo for storing and monitoring all files.
+  You can find them in the [Homeworks folder](LabHomeworks)
