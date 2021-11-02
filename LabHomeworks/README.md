@@ -5,9 +5,9 @@
 
 ## 2. Homework #1
 
-  1) **Components:** RBG led (x1), potentiometers (x3), 330Ω resistors (x3) and wires (x15)
+  1) **Components:** RGB led (x1), potentiometers (x3), 330Ω resistors (x3) and wires (x15)
 
-  2) **Technical Task:** Use a separat potentiometer in controlling each of thecolor of the RGB led (Red,Green and Blue). The control must be done with digital electronics.
+  2) **Technical task:** Use a separat potentiometer in controlling each of the color of the RGB led (Red,Green and Blue). The control must be done with digital electronics.
   
   3) **Picture of the circuit:** 
   
@@ -16,3 +16,17 @@
   4) **Video:** https://www.youtube.com/watch?v=n3mSYVlwWYk
 
   5) You can find the code [here](RGB_LED_3_potentiometers.ino).
+
+## 3. Homework #2
+
+  1) **Components:** RGB led (x5), button (x1), buzzer (x1), 330Ω resistors (x2) and wires (x11)
+
+  2) **Technical task:** Building the traffic lights for a crosswalk. 2 LEDs represent the traffic lights for pedestrians (red & green) and 3 LEDs represent the traffic lights for vehicles (red, yellow & green).
+
+  3) **Picture of the circuit:**
+  
+      <img src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" data-canonical-src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" width="500" height="500" />
+      
+  4) **Vide:** https://www.youtube.com/shorts/D7a8uw-gKKc
+
+  5) You can find the code [here](traffic_light.ino).

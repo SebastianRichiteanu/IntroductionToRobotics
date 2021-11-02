@@ -155,7 +155,5 @@ void loop() {
   } else if (state == 4) {
     state4();
   }
-
-  Serial.println(buttonPressed);
   
 }
