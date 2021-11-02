@@ -16,25 +16,25 @@ const int state4Timer = 5000;
 // buzzer + blinking settings
 const int buzzerSound = 250;
 const int buzzTime = 250;
-const int buzzFastTime = 100;
+const int buzzFastTime = 150;
 const int blinkTime = 300;
 int blinkValue = LOW;
 
 // buzzer + blinking timers
-unsigned int lastBuzz = 0;
-unsigned int lastBlink = 0;
+unsigned long lastBuzz = 0;
+unsigned long lastBlink = 0;
 
 // button reading
 int reading = 0;
 bool buttonPressed = 0;
 bool lastButtonState = LOW;
 bool buttonState = LOW;
-unsigned int lastDebounceTime = 0;
-unsigned int debounceDelay = 50;
+unsigned long lastDebounceTime = 0;
+unsigned long debounceDelay = 50;
 
 // current state + timer for state
 int state = 1;
-unsigned int timer = 0;
+unsigned long timer = 0;
 
 // to check if someone pressed the button (IN STATE 1)
 void buttonChecker() { 
@@ -46,8 +46,10 @@ void buttonChecker() {
     if (reading != buttonState) {
       buttonState = reading;
       if (buttonState == LOW && state == 1) {
-        buttonPressed = 1;
-        timer = millis();
+        if (!buttonPressed) { // to not reset the timer if the button is pressed multiple times
+          buttonPressed = 1;
+          timer = millis();
+        }
       }
     }
   }
@@ -123,6 +125,7 @@ void stateChanger() {
     timer = millis();
   } else if (state == 4 && millis() - timer > state4Timer) {
     state = 1;
+    timer = millis();
   }
 }
 
@@ -152,4 +155,7 @@ void loop() {
   } else if (state == 4) {
     state4();
   }
+
+  Serial.println(buttonPressed);
+  
 }
