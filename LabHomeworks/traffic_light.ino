@@ -1,59 +1,84 @@
+// button + buzzer + led pins
 const int buttonPin = 2;
 const int buzzerPin = 3;
 const int pedRedPin = 4;
 const int pedGreenPin = 5;
-const int carRedPin = 6;
-const int carYellowPin = 7;
-const int carGreenPin = 8;
+const int vehRedPin = 6;
+const int vehYellowPin = 7;
+const int vehGreenPin = 8;
 
+// states time duration
 const int state1Timer = 10000;
 const int state2Timer = 3000;
 const int state3Timer = 10000;
-const int state4Timer = 3000;
+const int state4Timer = 5000;
 
+// buzzer + blinking settings
 const int buzzerSound = 250;
-
 const int buzzTime = 250;
 const int buzzFastTime = 100;
-const int blinkTime = 500;
+const int blinkTime = 300;
+int blinkValue = LOW;
 
-int state = 1;
+// buzzer + blinking timers
+unsigned int lastBuzz = 0;
+unsigned int lastBlink = 0;
 
-int buttonPressed = 0;
+// button reading
+int reading = 0;
+bool buttonPressed = 0;
 bool lastButtonState = LOW;
 bool buttonState = LOW;
 unsigned int lastDebounceTime = 0;
 unsigned int debounceDelay = 50;
 
-int lastBuzz = 0;
-int lastBlink = 0;
-int blinkValue = LOW;
-int timer = 0;
+// current state + timer for state
+int state = 1;
+unsigned int timer = 0;
+
+// to check if someone pressed the button (IN STATE 1)
+void buttonChecker() { 
+  reading = digitalRead(buttonPin);
+  if (reading != lastButtonState) {
+    lastDebounceTime = millis();
+  }
+  if (millis() - lastDebounceTime > debounceDelay) {
+    if (reading != buttonState) {
+      buttonState = reading;
+      if (buttonState == LOW && state == 1) {
+        buttonPressed = 1;
+        timer = millis();
+      }
+    }
+  }
+  lastButtonState = reading;
+}
 
 void state1() {
   digitalWrite(pedRedPin, HIGH);
   digitalWrite(pedGreenPin, LOW);
-  digitalWrite(carRedPin, LOW);
-  digitalWrite(carYellowPin, LOW);
-  digitalWrite(carGreenPin, HIGH);
+  digitalWrite(vehRedPin, LOW);
+  digitalWrite(vehYellowPin, LOW);
+  digitalWrite(vehGreenPin, HIGH);
   noTone(buzzerPin);    
 }
 
 void state2() {
   digitalWrite(pedRedPin, HIGH);
   digitalWrite(pedGreenPin, LOW);
-  digitalWrite(carRedPin, LOW);
-  digitalWrite(carYellowPin, HIGH);
-  digitalWrite(carGreenPin, LOW);
+  digitalWrite(vehRedPin, LOW);
+  digitalWrite(vehYellowPin, HIGH);
+  digitalWrite(vehGreenPin, LOW);
   noTone(buzzerPin);    
 }
 
 void state3() {
   digitalWrite(pedRedPin, LOW);
   digitalWrite(pedGreenPin, HIGH);
-  digitalWrite(carRedPin, HIGH);
-  digitalWrite(carYellowPin, LOW);
-  digitalWrite(carGreenPin, LOW);
+  digitalWrite(vehRedPin, HIGH);
+  digitalWrite(vehYellowPin, LOW);
+  digitalWrite(vehGreenPin, LOW);
+  // buzz checker
   if (millis() - lastBuzz > buzzTime) {
     noTone(buzzerPin);
   }
@@ -65,16 +90,17 @@ void state3() {
 
 void state4() {
   digitalWrite(pedRedPin, LOW);
-
-
+  // blink checker
   if (millis() - lastBlink > blinkTime) {
     blinkValue = !blinkValue;
     lastBlink = millis();
   }
   digitalWrite(pedGreenPin, blinkValue);
-  digitalWrite(carRedPin, HIGH);
-  digitalWrite(carYellowPin, LOW);
-  digitalWrite(carGreenPin, LOW);
+  
+  digitalWrite(vehRedPin, HIGH);
+  digitalWrite(vehYellowPin, LOW);
+  digitalWrite(vehGreenPin, LOW);
+  
   if (millis() - lastBuzz > buzzFastTime) {
     noTone(buzzerPin);
   }
@@ -89,8 +115,7 @@ void stateChanger() {
     state = 2;
     buttonPressed = 0;
     timer = millis();
-  }
-  if (state == 2 && millis() - timer > state2Timer) {
+  } else if (state == 2 && millis() - timer > state2Timer) {
     state = 3;
     timer = millis();
   } else if (state == 3 && millis() - timer > state3Timer) {
@@ -98,54 +123,33 @@ void stateChanger() {
     timer = millis();
   } else if (state == 4 && millis() - timer > state4Timer) {
     state = 1;
-    timer = millis();
   }
 }
 
 void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
-
+  
   pinMode(pedRedPin, OUTPUT);
   pinMode(pedGreenPin, OUTPUT);
-
-  pinMode(carRedPin, OUTPUT);
-  pinMode(carYellowPin, OUTPUT);
-  pinMode(carGreenPin, OUTPUT);
+  pinMode(vehRedPin, OUTPUT);
+  pinMode(vehYellowPin, OUTPUT);
+  pinMode(vehGreenPin, OUTPUT);
   
   Serial.begin(9600);
 }
 
 void loop() {
-  int reading = digitalRead(buttonPin);
-
-  if (reading != lastButtonState) {
-    lastDebounceTime = millis();
-  }
-  if (millis() - lastDebounceTime > debounceDelay) {
-    if (reading != buttonState) {
-      buttonState = reading;
-      if (buttonState == LOW) {
-        buttonPressed = 1;
-        timer = millis();
-      }
-    }
-  }
-  lastButtonState = reading;
+  buttonChecker();
 
   stateChanger();
   
   if (state == 1) {
     state1();
-  }
-  if (state == 2) {
+  } else if (state == 2) {
     state2();
-  }
-  if (state == 3) {
+  } else if (state == 3) {
     state3();
-  }
-  if (state == 4) {
+  } else if (state == 4) {
     state4();
   }
-  
-  Serial.println(buttonPressed);
 }
