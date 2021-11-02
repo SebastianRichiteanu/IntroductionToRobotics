@@ -11,7 +11,7 @@
   
   3) **Picture of the circuit:** 
   
-      <img src="https://user-images.githubusercontent.com/61471997/138553789-233b42b2-70c2-454b-8a99-07e9f6b14e9b.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/138553789-233b42b2-70c2-454b-8a99-07e9f6b14e9b.jpg" width="500" height="500" />
+      <img src="https://user-images.githubusercontent.com/61471997/138553789-233b42b2-70c2-454b-8a99-07e9f6b14e9b.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/138553789-233b42b2-70c2-454b-8a99-07e9f6b14e9b.jpg" width="400" height="500" />
 
   4) **Video:** https://www.youtube.com/watch?v=n3mSYVlwWYk
 
@@ -25,8 +25,8 @@
 
   3) **Picture of the circuit:**
   
-      <img src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" data-canonical-src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" width="500" height="500" />
+      <img src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" data-canonical-src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" width="400" height="500" />
       
-  4) **Vide:** https://www.youtube.com/shorts/D7a8uw-gKKc
+  4) **Video:** https://www.youtube.com/shorts/D7a8uw-gKKc
 
   5) You can find the code [here](traffic_light.ino).
