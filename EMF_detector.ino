@@ -6,7 +6,6 @@ const int pinD = 5;
 const int pinE = 6;
 const int pinF = 7;
 const int pinG = 8;
-const int pinDP = 9;
 const int buzzerPin = 11;
 const int antennaPin = A0;
 
@@ -53,7 +52,6 @@ void displayNumber(byte digit) {
   for (int i = 0; i < segSize - 1; ++i) {
     digitalWrite(segments[i], digitMatrix[digit][i]);
   }
-  digitalWrite(segments[segSize-1],state);
 }
 
 int getReading() {

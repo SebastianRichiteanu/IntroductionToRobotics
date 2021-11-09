@@ -36,3 +36,18 @@
   4) **Video:** https://www.youtube.com/shorts/D7a8uw-gKKc
 
   5) You can find the code [here](traffic_light.ino).
+
+## 3. Homework #3
+
+  1) **Components:** 7-segment display, buzzer (x1), 100Ω resistor (x1), 330Ω resistors (x2), 1MΩ resistors (x3) and wires (x15).
+
+  2) **Technical task:** Building an EMF (electromagnetic field) detector.
+
+  3) **Picture of the circuit:**
+
+      <img src="https://user-images.githubusercontent.com/61471997/140937758-0d30a945-d546-43b9-8c55-0ed8b4ec7ca0.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/140937758-0d30a945-d546-43b9-8c55-0ed8b4ec7ca0.jpg" width="400" height="500" />
+      
+  4) **Video:** https://www.youtube.com/watch?v=VjAoJ53yiV4
+
+  5) You can find the code [here](EMF_detector.ino).
+
