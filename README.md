@@ -51,3 +51,18 @@
 
   5) You can find the code [here](EMF_detector.ino).
 
+## 4. Homework #4
+
+  1) **Components:** 4 digit 7-segment display (x1), joystick (x1),  74hc59 shift register  (x1), 330Ω resistors (x4), and wires.
+
+  2) **Technical task:** In the first state you can cycle through the digits by tilting the joystick left or right. The blinking dot indicated the current digit
+When pressing the button we switch to the second state. Locked in on a digit, tilting the joystick up and down we increment or decrement the digit's value. When pressing the button again the value is saved and we return to the first state.
+Values are saved in eeprom, so on a reset, the last saved value is loaded.
+
+  3) **Picture of the circuit:**
+
+      <img src="https://user-images.githubusercontent.com/61471997/141974246-e6c5721b-bbc5-41a0-92dc-92a3203fcf36.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/141974246-e6c5721b-bbc5-41a0-92dc-92a3203fcf36.jpg" width="400" height="500" />
+      
+  4) **Video:** https://www.youtube.com/watch?v=4iLLTVzR0OU
+
+  5) You can find the code [here](Four_Digits_Digital_Switcher.ino).
