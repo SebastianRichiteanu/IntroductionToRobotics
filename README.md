@@ -55,9 +55,10 @@
 
   1) **Components:** 4 digit 7-segment display (x1), joystick (x1),  74hc59 shift register  (x1), 330Ω resistors (x4), and wires.
 
-  2) **Technical task:** In the first state you can cycle through the digits by tilting the joystick left or right. The blinking dot indicated the current digit
-When pressing the button we switch to the second state. Locked in on a digit, tilting the joystick up and down we increment or decrement the digit's value. When pressing the button again the value is saved and we return to the first state.
-Values are saved in eeprom, so on a reset, the last saved value is loaded.
+  2) **Technical task:** 
+      - In the first state you can cycle through the digits by tilting the joystick left or right. The blinking dot indicated the current digit
+      - When pressing the button we switch to the second state. Locked in on a digit, tilting the joystick up and down we increment or decrement the digit's value. When pressing the button again the value is saved and we return to the first state.
+      - Values are saved in eeprom, so on a reset, the last saved value is loaded.
 
   3) **Picture of the circuit:**
 
