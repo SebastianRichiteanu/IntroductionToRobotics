@@ -19,7 +19,7 @@
   
       <img src="https://user-images.githubusercontent.com/61471997/138553789-233b42b2-70c2-454b-8a99-07e9f6b14e9b.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/138553789-233b42b2-70c2-454b-8a99-07e9f6b14e9b.jpg" width="400" height="500" />
 
-  4) **Video:** https://www.youtube.com/watch?v=n3mSYVlwWYk
+  4) **Video:** <a href="https://www.youtube.com/watch?v=n3mSYVlwWYk" target="_blank">here</a>
 
   5) You can find the code [here](RGB_LED_3_potentiometers.ino).
 
@@ -33,7 +33,7 @@
   
       <img src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" data-canonical-src="https://user-images.githubusercontent.com/61471997/139835966-d7bad546-0751-4ee3-95e9-bb27711fa9a9.jpeg" width="400" height="500" />
       
-  4) **Video:** https://www.youtube.com/shorts/D7a8uw-gKKc
+  4) **Video:** <a href="https://www.youtube.com/shorts/D7a8uw-gKKc" target="_blank">here</a>
 
   5) You can find the code [here](traffic_light.ino).
 
@@ -47,7 +47,7 @@
 
       <img src="https://user-images.githubusercontent.com/61471997/140937758-0d30a945-d546-43b9-8c55-0ed8b4ec7ca0.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/140937758-0d30a945-d546-43b9-8c55-0ed8b4ec7ca0.jpg" width="400" height="500" />
       
-  4) **Video:** https://www.youtube.com/watch?v=VjAoJ53yiV4
+  4) **Video:** <a href="https://www.youtube.com/watch?v=VjAoJ53yiV4" target="_blank">here</a>
 
   5) You can find the code [here](EMF_detector.ino).
 
@@ -64,6 +64,6 @@
 
       <img src="https://user-images.githubusercontent.com/61471997/141974246-e6c5721b-bbc5-41a0-92dc-92a3203fcf36.jpg" data-canonical-src="https://user-images.githubusercontent.com/61471997/141974246-e6c5721b-bbc5-41a0-92dc-92a3203fcf36.jpg" width="400" height="500" />
       
-  4) **Video:** https://www.youtube.com/watch?v=4iLLTVzR0OU
+  4) **Video:** <a href="https://www.youtube.com/watch?v=4iLLTVzR0OU" target="_blank">here</a>
 
   5) You can find the code [here](Four_Digits_Digital_Switcher.ino).
